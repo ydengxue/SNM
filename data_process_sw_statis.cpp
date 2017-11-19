@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
     long long vol_total_cnt;
 
     if (argc < 2) {
+        cout << "input error!\r\n" << endl;
         return -1;
     }
 	infile.open(argv[1]); //input the name of the file which is opened
@@ -88,7 +89,7 @@ int main(int argc, char *argv[])
             for (i = 0; i < write_num; i++)
             {
                 index_w++;
-                if (index_w >= WR_BUFFER_SIZE) 
+                if (index_w >= WR_BUFFER_SIZE)
                 {
                     index_w = 0;
                     write_buf1 = 2;
@@ -96,7 +97,7 @@ int main(int argc, char *argv[])
                     break;
                 }
             }
-        } 
+        }
         else if (wr_buffer2.size() >= WR_BUFFER_SIZE)
 		{
             vol = 1;
@@ -105,7 +106,7 @@ int main(int argc, char *argv[])
             for (i = 0; i < write_num; i++)
             {
                 index_w++;
-                if (index_w >= WR_BUFFER_SIZE) 
+                if (index_w >= WR_BUFFER_SIZE)
                 {
                     index_w = 0;
                     write_buf2 = 2;
@@ -119,15 +120,15 @@ int main(int argc, char *argv[])
             if (vol) {
                 sw1_cnt++;
             }
-            else 
+            else
             {
                 sw2_cnt++;
             }
         }
 
         vol_last = vol;
-        
-        if (vol) 
+
+        if (vol)
         {
             vol_h_cnt += write_num;
         }
@@ -142,15 +143,15 @@ int main(int argc, char *argv[])
 				    continue;
 			    }
 			    wr_buffer1.insert(p_ins);
-            } 
-            else 
+            }
+            else
             {
 			    if (wr_buffer2.count(p_ins))
 			    {
 				    continue;
 			    }
 			    wr_buffer2.insert(p_ins);
-            }            
+            }
 		}
 		else
 		{

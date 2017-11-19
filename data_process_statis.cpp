@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
     long long rd_cache_cnt;
 
     if (argc < 2) {
+        cout << "input error!\r\n" << endl;
         return -1;
     }
 	infile.open(argv[1]); //input the name of the file which is opened
@@ -82,7 +83,7 @@ int main(int argc, char *argv[])
             {
 //			    cout << 'w';
                 index_w++;
-                if (index_w >= WR_BUFFER_SIZE) 
+                if (index_w >= WR_BUFFER_SIZE)
                 {
                     index_w = 0;
                     write_buf1 = 2;
@@ -90,7 +91,7 @@ int main(int argc, char *argv[])
                     break;
                 }
             }
-        } 
+        }
         else if (wr_buffer2.size() >= WR_BUFFER_SIZE)
 		{
             write_buf1 = 0;
@@ -99,7 +100,7 @@ int main(int argc, char *argv[])
             {
 //			    cout << 'w';
                 index_w++;
-                if (index_w >= WR_BUFFER_SIZE) 
+                if (index_w >= WR_BUFFER_SIZE)
                 {
                     index_w = 0;
                     write_buf2 = 2;
@@ -119,15 +120,15 @@ int main(int argc, char *argv[])
 				    continue;
 			    }
 			    wr_buffer1.insert(p_ins);
-            } 
-            else 
+            }
+            else
             {
 			    if (wr_buffer2.count(p_ins))
 			    {
 				    continue;
 			    }
 			    wr_buffer2.insert(p_ins);
-            }            
+            }
 		}
 		else
 		{

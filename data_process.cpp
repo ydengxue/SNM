@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
     int i;
 
     if (argc < 2) {
+        cout << "input error!\r\n" << endl;
         return -1;
     }
 	infile.open(argv[1]); //input the name of the file which is opened
